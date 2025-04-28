@@ -37,13 +37,13 @@ def decompress_zip_with_progress(zip_file_path, extract_to_folder=None):
 def download_benchmark():
     EE_BENCH_DIR = "/home/EarthExtreme-Bench/data/zip-test"
     local_directory = Path(EE_BENCH_DIR)
-    dataset_repo = "zhaoshan/ee-bench_v1.0"
+    dataset_repo = "anonyau/ee-bench-v1.0"
 
     local_directory.mkdir(parents=True, exist_ok=True)
 
     api = HfApi()
     dataset_files = api.list_repo_files(
-        repo_id=dataset_repo, repo_type="dataset", revision="stable"
+        repo_id=dataset_repo, repo_type="dataset", revision="main"
     )
 
     for file in dataset_files:
